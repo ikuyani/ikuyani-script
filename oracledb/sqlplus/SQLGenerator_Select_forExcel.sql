@@ -2,7 +2,7 @@
 -- SQL> SET LINESIZE 4000
 -- SQL> SET TRIMSPOOL ON
 -- SQL> SET SERVEROUTPUT ON
--- SQL> @SQLGenerator_SelectForExcel ${Owner} ${Table}
+-- SQL> @SQLGenerator_Select_forExcel ${Owner} ${Table}
 
 -- ŒŸõŒ‹‰Ê‚ğƒ^ƒu‹æØ‚è‚Åo—Í‚·‚éSELECT•¶‚ğì¬‚·‚é
 DECLARE
