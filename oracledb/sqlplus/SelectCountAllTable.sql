@@ -1,9 +1,11 @@
+-- Charset MS932
 -- SQL> SET SERVEROUTPUT ON
+-- SQL> @SelectCountAllTable.sql ${Owner}
 
 -- SELECT可能な全テーブルのレコード件数を取得する
 DECLARE
     -- 定数
-    cOWNER VARCHAR2(30) := 'IKUYANI'; -- オーナー
+    cOWNER VARCHAR2(30) := '&1'; -- オーナー
     cDELIM VARCHAR2(10) := CHR(9); -- 区切り文字
 
     -- 変数
