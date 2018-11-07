@@ -13,13 +13,32 @@ rem *   ・行の先頭に # がある場合、コメント行とする
 rem *   ・空行は無視される
 rem * 　・値が空の場合、環境変数は未設定となる
 rem * 
+rem *   ＜戻り値＞
+rem *   ・正常に処理できた場合、0を返す
+rem *   ・エラーなど不正の場合、9を返す
+rem * 
 rem * [引数]
 rem *   %1: プロパティファイルのパス
 rem * 
 rem * [バージョン]
-rem *   1.0
+rem *   1.0.0
 rem ******************************************************************
 rem echo Properties.bat %1
+
+set FILE_PATH=%1
+
+rem NULL(不正)の場合、9を返す
+if not defined FILE_PATH (
+    endlocal
+    exit /b 9
+)
+
+rem プロパティファイルが存在しない場合、9を返す
+call "%~dp0\IsFileExists.bat" %FILE_PATH%
+if not %ERRORLEVEL% equ 0 (
+    endlocal
+    exit /b 9
+)
 
 for /f "usebackq tokens=1,2* delims==" %%a in (%1) do (
     setlocal enabledelayedexpansion
@@ -32,7 +51,7 @@ for /f "usebackq tokens=1,2* delims==" %%a in (%1) do (
     )
 )
 
-exit /b
+exit /b 0
 
 rem ******************************************************************
 rem * IsIgnore: 環境変数への設定の除外対象かの判定

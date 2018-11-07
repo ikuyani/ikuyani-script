@@ -14,13 +14,28 @@ rem *   %2: 期待値
 rem *   %3: 実際の値
 rem * 
 rem * [バージョン]
-rem *   1.0
+rem *   1.0.0
 rem ******************************************************************
 rem echo AssertEquals.bat %1 %2 %3
 
 set TEST_NAME=%~1
 set EXPECTED=%2
 set ACTUAL=%3
+
+if not defined ACTUAL (
+    if not defined EXPECTED (
+        echo Successful %TEST_NAME%.
+        endlocal
+        exit /b 0
+    )
+    echo Failed %TEST_NAME%, Expected=%EXPECTED%, Actual=%ACTUAL%.
+    endlocal
+    exit /b 1
+) else if not defined EXPECTED (
+    echo Failed %TEST_NAME%, Expected=%EXPECTED%, Actual=%ACTUAL%.
+    endlocal
+    exit /b 1
+)
 
 if not %EXPECTED%==%ACTUAL% (
     echo Failed %TEST_NAME%, Expected=%EXPECTED%, Actual=%ACTUAL%.
