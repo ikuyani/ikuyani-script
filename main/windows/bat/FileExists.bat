@@ -2,7 +2,7 @@
 @echo off
 
 rem ******************************************************************
-rem * IsFileExists.bat: 指定されたパスがファイルであるか検証する
+rem * FileExists.bat: 指定されたパスがファイルであるか検証する
 rem *
 rem * [説明]
 rem *   ＜戻り値＞
@@ -15,7 +15,7 @@ rem *
 rem * [バージョン]
 rem *   1.0.0
 rem ******************************************************************
-rem echo IsFileExists.bat %1
+rem echo FileExists.bat %1
 
 set FILE_PATH=%1
 

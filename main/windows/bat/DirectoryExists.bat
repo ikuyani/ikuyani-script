@@ -2,7 +2,7 @@
 @echo off
 
 rem ******************************************************************
-rem * IsDirectoryExists.bat: 指定されたパスがフォルダであるか検証する
+rem * DirectoryExists.bat: 指定されたパスがフォルダであるか検証する
 rem *
 rem * [説明]
 rem *   ＜戻り値＞
@@ -15,7 +15,7 @@ rem *
 rem * [バージョン]
 rem *   1.0.0
 rem ******************************************************************
-rem echo IsDirectoryExists.bat %1
+rem echo DirectoryExists.bat %1
 
 set FILE_PATH=%1
 
