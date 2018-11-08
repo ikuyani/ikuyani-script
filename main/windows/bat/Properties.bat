@@ -34,7 +34,7 @@ if not defined FILE_PATH (
 )
 
 rem プロパティファイルが存在しない場合、9を返す
-call "%~dp0\IsFileExists.bat" %FILE_PATH%
+call "%~dp0\FileExists.bat" %FILE_PATH%
 if not %ERRORLEVEL% equ 0 (
     endlocal
     exit /b 9
