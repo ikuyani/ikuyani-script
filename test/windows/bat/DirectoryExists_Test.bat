@@ -1,7 +1,7 @@
 @setlocal
 @echo off
 
-call env.bat
+call "%~dp0\test-config.bat"
 
 rem ÉeÉXÉgëŒè€
 set TEST_TARGET_PATH=%TEST_BAT_DIR%\DirectoryExists.bat

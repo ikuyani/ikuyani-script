@@ -25,6 +25,10 @@ rem *   1.0.0
 rem ******************************************************************
 rem echo Properties.bat %1
 
+rem 利用する外部バッチファイル
+set BAT_FILEEXISTS="%~dp0\FileExists.bat"
+
+rem 引数
 set FILE_PATH=%1
 
 rem NULL(不正)の場合、9を返す
@@ -34,7 +38,7 @@ if not defined FILE_PATH (
 )
 
 rem プロパティファイルが存在しない場合、9を返す
-call "%~dp0\FileExists.bat" %FILE_PATH%
+call %BAT_FILEEXISTS% %FILE_PATH%
 if not %ERRORLEVEL% equ 0 (
     endlocal
     exit /b 9

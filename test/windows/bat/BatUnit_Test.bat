@@ -1,7 +1,7 @@
 @setlocal
 @echo off
 
-call env.bat
+call "%~dp0\test-config.bat"
 
 echo ** AssertDirectoryExists_Test *************************************
 call BatUnit\AssertDirectoryExists_Test.bat
