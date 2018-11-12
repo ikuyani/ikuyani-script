@@ -4,16 +4,22 @@
 call "%~dp0\test-config.bat"
 
 echo ** AssertDirectoryExists_Test *************************************
-call BatUnit\AssertDirectoryExists_Test.bat
+rem call BatUnit\AssertDirectoryExists_Test.bat
 
 echo ** AssertEquals_Test *************************************
-call BatUnit\AssertEquals_Test.bat
+rem call BatUnit\AssertEquals_Test.bat
 
 echo ** AssertFileExists_Test *************************************
-call BatUnit\AssertFileExists_Test.bat
+rem call BatUnit\AssertFileExists_Test.bat
+
+echo ** AssertFileFirstLineEquals_Test *************************************
+rem call BatUnit\AssertFileFirstLineEquals_Test.bat
+
+echo ** AssertFileNotExists_Test *************************************
+rem call BatUnit\AssertFileNotExists_Test.bat
 
 echo ** AssertNull_Test *************************************
-call BatUnit\AssertNull_Test.bat
+rem call BatUnit\AssertNull_Test.bat
 
 endlocal
 pause
