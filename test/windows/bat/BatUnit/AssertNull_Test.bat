@@ -8,14 +8,14 @@ set TEST_NOTNULL=AAA
 
 rem ê¨å˜
 call %TEST_ASSERT_NULL% AssertNull-Successful %TEST_NULL%
-if not %ERRORLEVEL% equ 0 (
+if %ERRORLEVEL% neq 0 (
     echo AssertNull-Successful is invalid, return-code[%ERRORLEVEL%].
 )
 
 rem é∏îs
 call %TEST_ASSERT_NULL% AssertNull-Failed %TEST_NOTNULL%
-if not %ERRORLEVEL% equ 1 (
-    echo AssertNull-Successful is invalid, return-code[%ERRORLEVEL%].
+if %ERRORLEVEL% neq 1 (
+    echo AssertNull-Failed is invalid, return-code[%ERRORLEVEL%].
 )
 
 endlocal
