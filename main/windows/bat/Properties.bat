@@ -39,7 +39,7 @@ if not defined FILE_PATH (
 
 rem プロパティファイルが存在しない場合、9を返す
 call %BAT_FILEEXISTS% %FILE_PATH%
-if not %ERRORLEVEL% equ 0 (
+if %ERRORLEVEL% neq 0 (
     endlocal
     exit /b 9
 )
@@ -47,7 +47,7 @@ if not %ERRORLEVEL% equ 0 (
 for /f "usebackq tokens=1,2* delims==" %%a in (%1) do (
     setlocal enabledelayedexpansion
     call :IsIgnore %%a
-    if not !ERRORLEVEL! equ 0 (
+    if !ERRORLEVEL! neq 0 (
         endlocal
         call :SetProperty %%a %%b
     ) else (
