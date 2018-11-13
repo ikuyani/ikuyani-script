@@ -30,7 +30,6 @@ rem ******************************************************************
 rem echo FileRotate.bat %1 %2
 
 rem 利用する外部バッチファイル
-set BAT_FILEEXISTS="%~dp0\FileExists.bat"
 set BAT_DIRECTORYEXISTS="%~dp0\DirectoryExists.bat"
 set BAT_ISINTEGER="%~dp0\IsInteger.bat"
 
