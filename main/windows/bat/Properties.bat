@@ -14,8 +14,10 @@ rem *   ・空行は無視される
 rem * 　・値が空の場合、環境変数は未設定となる
 rem * 
 rem *   ＜戻り値＞
-rem *   ・正常に処理できた場合、0を返す
-rem *   ・エラーなど不正の場合、9を返す
+rem *   ・正常に処理した場合、0を返す
+rem *   ・プロパティファイルが存在しない場合、1を返す
+rem *   ・引数が不正の場合、8を返す
+rem *   ・その他、予期しないエラーなどの場合、9を返す
 rem * 
 rem * [引数]
 rem *   %1: プロパティファイルのパス
@@ -29,22 +31,22 @@ rem 利用する外部バッチファイル
 set BAT_FILEEXISTS="%~dp0\FileExists.bat"
 
 rem 引数
-set FILE_PATH=%1
+set FILE_PATH=%~1
 
 rem NULL(不正)の場合、9を返す
 if not defined FILE_PATH (
     endlocal
-    exit /b 9
+    exit /b 8
 )
 
 rem プロパティファイルが存在しない場合、9を返す
-call %BAT_FILEEXISTS% %FILE_PATH%
+call %BAT_FILEEXISTS% "%FILE_PATH%"
 if %ERRORLEVEL% neq 0 (
     endlocal
-    exit /b 9
+    exit /b 1
 )
 
-for /f "usebackq tokens=1,2* delims==" %%a in (%1) do (
+for /f "usebackq tokens=1,2* delims==" %%a in ("%FILE_PATH%") do (
     setlocal enabledelayedexpansion
     call :IsIgnore %%a
     if !ERRORLEVEL! neq 0 (
