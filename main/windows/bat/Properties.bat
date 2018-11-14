@@ -33,13 +33,13 @@ set BAT_FILEEXISTS="%~dp0\FileExists.bat"
 rem 引数
 set FILE_PATH=%~1
 
-rem NULL(不正)の場合、9を返す
+rem NULL(不正)の場合、8を返す
 if not defined FILE_PATH (
     endlocal
     exit /b 8
 )
 
-rem プロパティファイルが存在しない場合、9を返す
+rem プロパティファイルが存在しない場合、1を返す
 call %BAT_FILEEXISTS% "%FILE_PATH%"
 if %ERRORLEVEL% neq 0 (
     endlocal

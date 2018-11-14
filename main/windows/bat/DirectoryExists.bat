@@ -1,4 +1,4 @@
-@setlocal enabledelayedexpansion
+@setlocal
 @echo off
 
 rem ******************************************************************

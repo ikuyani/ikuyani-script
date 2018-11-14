@@ -25,7 +25,7 @@ rem echo CreateDirectory.bat %1
 
 set DIR_PATH=%1
 
-rem NULL(不正)の場合、9を返す
+rem NULL(不正)の場合、8を返す
 if not defined DIR_PATH (
     endlocal
     exit /b 8
