@@ -1,0 +1,15 @@
+# FileBatchProcessing.bat用プロパティ
+
+# 対象のファイルに対して実行するバッチファイル(必須)
+PROCESSING_BATCH_PATH=
+
+# デフォルトの対象フォルダ
+DEFAULT_TARGET_DIR=
+# デフォルトの対象のファイル名パターン
+DEFAULT_FILE_PATTERN=*
+
+# PROCESSING_BATCH_PATHの実行中にエラーとなった場合、次ファイルの継続有無
+# 継続する場合は0以外、継続しない場合は0
+ERROR_CONTINUE=1
+
+# 以降、任意
